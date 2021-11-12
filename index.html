@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html style="font-family: SegoeUI;">
+    <!-- script src="./renderer.js"></script> React functionality or something.-->
+    <script language=JavaScript>
+        
+        var message = "You don't have right click privileges. Go steal NFTs instead.";
+        
+        function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
+        
+        if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
+        
+        document.onmousedown = rtclickcheck;
+        
+        </script>
+    <head>
+        <meta charset="UTF-8">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
+        <link rel="stylesheet" href="./index.css">
+        <title>Project Cutie - Internal Ring</title>
+    </head>
+    <body style="background-color: black; color:white;">
+    <button style="background-color:darkgrey" id="Back">Back</button>
+    <button style="background-color:darkgrey" id="Foward">Foward</button>
+    <h1 style="font-style: italic;">Project Cutie</h1>
+    <p>This is an internal project, and can only be ran locally.<br /><span style="color:darkred;">Unauthorized reproduction or distribution of this, or any portion of it, may result in severe civil and criminal penalties, and will be prosecuted to the maxiumum extent possible under the law.</span></p>
+    <p>Here's a story about this project:<br /><i>'Someone once told me that i'm cute.<br />
+    So are you, testing my projects. Trying things out, and making me blush.'</i><br /><b>- Baka</b></p>
+    <p>How about you listen to some music?</p>
+    <audio controls>
+        <source src="./etc/music.mp3" type="audio/mp3">
+    </audio>
+    <h2>How exactly do rings work? What are their benefits?</h2>
+    <hr>
+    <p>The <b>Internal Ring</b> is for me to make new things, and break everything.</p>
+    <ul>
+        <i>
+        <li>You're lucky the website isn't unusable. That's about it for you.</li>
+        </i>
+    </ul>
+    <p>The <b>External Ring</b> is basically canary for you.</p>
+    <ul>
+        <i>
+        <li>You get to try the newest things.</li>
+        <li>There <u>will</u> be issues.</li>
+        <li><b>Experiments are enabled.</b></li>
+        </i>
+    </ul>
+    <p><s>The <b>banana ring</b> is for Kris.</s></p>
+    <p>Finally, the <b>Stable Ring</b> is for everyone, but this time stable.</p>
+    <ul>
+        <i>
+        <li>You get to try the newest things, <u>when they're ready.</u></li>
+        <li>There will be little to no issues.</li>
+        <li><b>Experiments are disabled.</b></li>
+        </i>
+    </ul>
+    <p>The hierarchy is Internal < External < Stable</p>
+    <h2>How do these tranlate to branches?</h2>
+    <p>The <b>Internal Ring</b> doesn't have a branch.</p>
+    <p>The <b>External Ring</b> uses the 'dev' branch.</p>
+    <p>The <b>Stable Ring</b> uses the 'master' branch.</p>
+    <br />
+    <h2>Thanks for reading!</h2>
+    <p>That's it. There are not <a href="./start.html">secrets</a>, I promise. :)</p>
+    <hr>
+    <p style="font-weight: bold;"><u>Internal</u> Electron Build - <a href="https://github.com/bakabakabakabakabaka/web/tree/deprecated">Source Code</a></p>
+    </body>
+    <script src="./buttons.js"></script> <!-- For the back and foward buttons. -->
+</html>

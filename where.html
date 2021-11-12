@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html style="font-family: SegoeUI;">
+    <script language=JavaScript>
+        
+        var message = "You don't have right click privileges. Go steal NFTs instead.";
+        
+        function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
+        
+        if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
+        
+        document.onmousedown = rtclickcheck;
+        
+        </script>
+    <head>
+        <meta charset="UTF-8">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
+        <link rel="stylesheet" href="./index.css">
+        <title>Project Cutie - Hello?</title>
+    </head>
+    <body style="background-color: black; color:white;">
+    <button style="background-color:darkgrey" id="Back">Back</button>
+    <button style="background-color:darkgrey" id="Foward">Foward</button>
+    <p style="color: #161717">Hello... anyone there?</p>
+    <script src="./s.js"></script>
+    </body>
+    <script src="./buttons.js"></script> <!-- For the back and foward buttons. -->
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "project-cutie-electron",
+  "version": "0.1.0",
+  "description": "A puzzle game, now in electron!",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Baka",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.3.1"
+  }
+}

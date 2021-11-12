@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html style="font-family: SegoeUI;">
+    <!-- script src="./renderer.js"></script> React functionality or something.-->
+    <script language=JavaScript>
+        
+        var message = "You don't have right click privileges. Go steal NFTs instead.";
+        
+        function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
+        
+        if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
+        
+        document.onmousedown = rtclickcheck;
+        
+        </script>
+    <head>
+        <meta charset="UTF-8">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
+        <link rel="stylesheet" href="./index.css">
+        <title>Project Cutie - Internal Ring</title>
+    </head>
+    <body style="background-color: black; color:white;">
+    <button style="background-color:darkgrey" id="Back">Back</button>
+    <button style="background-color:darkgrey" id="Foward">Foward</button>
+    <h1 style="font-style: italic;">Welcome to Project Cutie! - Before you begin...</h1>
+    <p style="color:rgb(255, 0, 0)">You're playing on the electron version of the puzzle. The way you navigate will change and the ability to go back is a privilege now. :) Good luck.</p>
+    <p style="color:rgb(255, 238, 0)">Tip - You should have notepad handy for codes or commands.</p>
+    <a href="./index.html">Got it.</a>
+    <hr>
+    <p style="font-weight: bold;"><u>Internal</u> Electron Build - <a href="https://github.com/bakabakabakabakabaka/web/tree/deprecated">Source Code</a></p>
+    </body>
+    <script src="./buttons.js"></script> <!-- For the back and foward buttons. -->
+</html>

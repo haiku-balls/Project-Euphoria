@@ -1,0 +1,1 @@
+setTimeout(() => {  console.log("/5 ^ 5 * 2 / 2"); }, 5000);
