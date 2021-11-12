@@ -17,7 +17,7 @@
         <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
         <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="../index.css">
         <title>Project Cutie - Internal Ring</title>
     </head>
     <body style="background-color: black; color:white;">
@@ -28,8 +28,8 @@
     <p>Here's a story about this project:<br /><i>'Someone once told me that i'm cute.<br />
     So are you, testing my projects. Trying things out, and making me blush.'</i><br /><b>- Baka</b></p>
     <p>How about you listen to some music?</p>
-    <audio controls>
-        <source src="./etc/music.mp3" type="audio/mp3">
+    <audio controls autoplay loop>
+        <source src="../etc/music.mp3" type="audio/mp3">
     </audio>
     <h2>How exactly do rings work? What are their benefits?</h2>
     <hr>
@@ -57,7 +57,7 @@
         </i>
     </ul>
     <p>The hierarchy is Internal < External < Stable</p>
-    <h2>How do these tranlate to branches?</h2>
+    <h2>How do these translate to branches?</h2>
     <p>The <b>Internal Ring</b> doesn't have a branch.</p>
     <p>The <b>External Ring</b> uses the 'dev' branch.</p>
     <p>The <b>Stable Ring</b> uses the 'master' branch.</p>
@@ -67,5 +67,5 @@
     <hr>
     <p style="font-weight: bold;"><u>Internal</u> Electron Build - <a href="https://github.com/bakabakabakabakabaka/web/tree/deprecated">Source Code</a></p>
     </body>
-    <script src="./buttons.js"></script> <!-- For the back and foward buttons. -->
+    <script src="../scripts/buttons.js"></script> <!-- For the back and foward buttons. -->
 </html>
