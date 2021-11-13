@@ -1,12 +1,10 @@
-const Back = document.getElementById("Back");
-const Foward = document.getElementById("Foward");
-
-Back.addEventListener("click", ()=>{
-    console.log("Going back.");
+var back = function() {
     history.back();
-})
+}
 
-Foward.addEventListener("click", ()=>{
-    console.log("Going foward.");
-    history.forward();
-})
+var foward = function() {
+    history.foward();
+}
+
+module.exports.back = back;
+module.exports.foward = foward;

@@ -10,8 +10,7 @@
         if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
         
         document.onmousedown = rtclickcheck;
-        
-        </script>
+    </script>
     <head>
         <meta charset="UTF-8">
         <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
@@ -21,23 +20,25 @@
         <title>Project Cutie - Internal Ring</title>
     </head>
     <body style="background-color: black; color:white;">
-    <audio autoplay loop>
-        <source src="./BGM/begin-BGM.mp3" type="audio/mp3">
-    </audio>
-    <button style="background-color:darkgrey" id="Back">Back</button>
-    <button style="background-color:darkgrey" id="Foward">Foward</button>
-    <h1 style="font-style: italic;">Welcome to Project Cutie! - Before you begin...</h1>
+    <h1 style="font-style: italic;">Welcome to Project Cutie! - Before you begin...</h1> <!-- Warnings, electron and beta... -->
     <p style="color:rgb(255, 0, 0)">You're playing on the electron version of the puzzle. The way you navigate will change and the ability to go back is a privilege now. :) Good luck.</p>
-    <p style="color:rgb(255, 0, 0)">Some more things... <br />
+    <p style="color:rgb(255, 0, 0)">Things to keep in mind... <br />
         - BGM is now played automatically, make sure you don't have your volume too high. <br />
         - The electron title will be used sometimes. Maybe you'll use it. :) <br />
         - The page names in this build are different from the web version, most strings are too. <br />
-        - When using the navigation command, as of now, typing in an invalid page will show nothing... 404 handling soon. <br />
+        - When using the navigation command, as of now, typing in an invalid page will show nothing. No fix so far :( <br />
     </p>
-    <p style="color:rgb(255, 238, 0)">Tip - You should have notepad handy for codes or commands.</p>
+    <p style="color:rgb(255, 238, 0)">Please save this. <br /> <!-- Notes -->
+        - Since there isn't an address bar, you will use the console at all times to navigate. Use this command: window.location.href = "./example-page.html" <br />
+    </p>
+    <h2>Changelog</h2>
+    <h3>Interanl Dev Build 2</h3>
+    <p>
+        - New! Back and Foward buttons natively integrated into the program! No more manual command bullcrap :o <br />
+        - New! Dialog Boxes are now working... :) <br />
+    </p>
     <a href="./A/index.html">Got it.</a>
     <hr>
     <p style="font-weight: bold;"><u>Internal</u> Electron Build - <a href="https://github.com/bakabakabakabakabaka/web/tree/deprecated">Source Code</a></p>
     </body>
-    <script src="./scripts/buttons.js"></script> <!-- For the back and foward buttons. -->
 </html>

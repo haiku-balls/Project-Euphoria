@@ -1,24 +1,64 @@
-const {app, BrowserWindow, Menu, MenuItem} = require('electron')
-const url = require('url')
-const path = require('path')
-const {debugInfo} = require('electron-util');
+const { app, BrowserWindow, Menu } = require('electron')
 const { dialog } = require('electron')
+const isMac = process.platform === 'darwin' // Mac fallback, not sure if mac will be supported in the first place.
+const {debugInfo} = require('electron-util');
 
-let win
-
-function createWindow() {
-   win = new BrowserWindow({width: 1280, height: 720})
-   win.loadURL(url.format ({
-      pathname: path.join(__dirname, './before.html'),
-      protocol: 'file:',
-      slashes: true
-   }))
+function betaWarning() {
+   const window = BrowserWindow.getFocusedWindow();
+   dialog.showMessageBox(window, {
+      title: "This is in beta!",
+      type: "warning",
+      message: "This version of the puzzle is in early development phases. Currently only available internally, you will encounter issues.",
+   });
 }
 
-const template = [   
+function startupDebugWindow() {
+   const window = BrowserWindow.getFocusedWindow();
+   dialog.showMessageBox(window, {
+      title: "Debug Info",
+      type: "info",
+      message: "Debug info \n" + debugInfo(),
+   });
+}
+
+app.on('ready', () => {
+   const win = new BrowserWindow ({
+     width: 1280,
+     height: 720
+   })
+   win.loadFile('./before.html')
+
+  function goForward() {
+    if(win.webContents.canGoForward())
+      win.webContents.goForward();
+  }
+
+  function goBack() {
+    if(win.webContents.canGoBack())
+      win.webContents.goBack();
+  }
+
+  const template = [
    {
       label: 'Tools',
       submenu: [
+         {
+            label: 'Back',
+            accelerator: 'left',
+            click: async () => {
+               goBack();
+            }
+         },
+         {
+            label: 'Foward',
+            accelerator: 'right',
+            click: async () => {
+               goForward();
+            }
+         },
+         {
+            type: 'separator'
+         },
          {
             role: 'reload'
          },
@@ -31,17 +71,25 @@ const template = [
          {
             role: 'togglefullscreen'
          }
-      ]
+      ],
+   },
+   {
+      label: 'Debug',
+      submenu: [
+         {
+            label: 'Client Info',
+            click: async () => {
+               startupDebugWindow();
+            }
+         }
+      ],
    },
 ]
 
-let options = {
-   title: "Reminder...",
-   buttons: ["Alright"],
-   message: "This is in beta... please report bugs :)",
-}
+  const menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(menu)
 
-
-const menu = Menu.buildFromTemplate(template)
-Menu.setApplicationMenu(menu)
-app.on('ready', createWindow)
+app.whenReady().then(() => {
+   setTimeout(() => { betaWarning(); }, 1000);
+})
+})
