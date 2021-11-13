@@ -12,13 +12,19 @@ function betaWarning() {
    });
 }
 
-function startupDebugWindow() {
+/* function DebugWindow() {
    const window = BrowserWindow.getFocusedWindow();
    dialog.showMessageBox(window, {
       title: "Debug Info",
       type: "info",
-      message: "Debug info \n" + debugInfo(),
+      message: "Version Internal Build 2\nMore stuff:\n" + debugInfo(),
    });
+} */
+
+function DebugWindow() {
+   const debugWin = new BrowserWindow({ width: 350, height: 350, maximizable: false, minimizable: false, movable: false, resizable: false, alwaysOnTop: true, skipTaskbar: false})
+   debugWin.loadFile("./about.html")
+   debugWin.removeMenu();
 }
 
 app.on('ready', () => {
@@ -74,22 +80,28 @@ app.on('ready', () => {
       ],
    },
    {
-      label: 'Debug',
+      label: 'About',
       submenu: [
          {
-            label: 'Client Info',
+            label: 'Program Info',
+            accelerator: 'ctrl+a',
             click: async () => {
-               startupDebugWindow();
+               DebugWindow();
             }
          }
       ],
    },
 ]
 
-  const menu = Menu.buildFromTemplate(template)
-  Menu.setApplicationMenu(menu)
+const menu = Menu.buildFromTemplate(template)
+Menu.setApplicationMenu(menu)
 
 app.whenReady().then(() => {
    setTimeout(() => { betaWarning(); }, 1000);
 })
+
+win.webContents.on("did-fail-load", function() {
+   console.error("did-fail-load");
+   win.loadFile("./A/404a.html"); // Redirect to the real 404 page, not the fake one.
+});
 })
