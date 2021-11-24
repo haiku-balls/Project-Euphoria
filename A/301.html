@@ -1,12 +1,11 @@
-<body id="t" class="neterror" style="font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 75%" jstcache="0">
-    <head>
-
+<html>
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
     <!-- Electron title -->
     <title>Project Cutie - 301 Moved Permanently</title>
-
-      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
-      <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
-    </head>
+  </head>
+<body id="t" class="neterror" style="font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 75%" jstcache="0">
       <div id="main-frame-error" class="interstitial-wrapper" jstcache="0">
         <div id="main-content" jstcache="0">
           <div class="icon icon-generic" jstcache="0"></div>
@@ -15,7 +14,7 @@
               <span jsselect="heading" jsvalues=".innerHTML:msg" jstcache="9">301 Moved Permanently</span>
               <a id="error-information-button" class="hidden" onclick="toggleErrorInformationPopup();" jstcache="0"></a>
             </h1>
-            <p jsselect="summary" jsvalues=".innerHTML:msg" jstcache="1"><strong jscontent="hostName" jstcache="22">The server was moved. That's all.</strong></p>
+            <p jsselect="summary" jsvalues=".innerHTML:msg" jstcache="1"><strong jscontent="hostName" jstcache="22">The server was moved. That's all. We're redirecting you to the new site now.</strong></p>
             <div id="error-information-popup-container" jstcache="0">
               <div id="error-information-popup" jstcache="0">
                 <div id="error-information-popup-box" jstcache="0">
@@ -26,8 +25,8 @@
                         <li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="21"></li>
                       </ul>
                     </div>
-                      <div class="error-code" jscontent="errorCode" jstcache="17">HTML RESPONCE ERROR CODE 301</div>
-                      <p id="error-information-popup-close" jstcache="0">
+                      <div class="error-code" jscontent="errorCode" jstcache="17">HTML REDIRECT CODE 301</div>
+                      <p id="error-information-popup-close" jstcache="0"></p>
                     </p>
                   </div>
                 </div>
@@ -36,4 +35,6 @@
           </div>
         </div>
       </div>
+      <script src="../scripts/301.js"></script>
   </body>
+</html>

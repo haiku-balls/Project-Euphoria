@@ -1,38 +1,47 @@
-const { app, BrowserWindow, Menu } = require('electron')
-const { dialog } = require('electron')
-const isMac = process.platform === 'darwin' // Mac fallback, not sure if mac will be supported in the first place.
-const {debugInfo} = require('electron-util');
+const { app, BrowserWindow, Menu, dialog } = require('electron');
+const EventEmitter = require('events')
+const loading = new EventEmitter()
+
+// Program variables, makes changing strings less tedious :>
+var ProgramVersionName = "Build 3";
+var ProgramVersionNumber = "0.3.0";
+var ProgramBranch = "Internal Branch"
 
 function betaWarning() {
    const window = BrowserWindow.getFocusedWindow();
    dialog.showMessageBox(window, {
-      title: "This is in beta!",
-      type: "warning",
-      message: "This version of the puzzle is in early development phases. Currently only available internally, you will encounter issues.",
+      title: "Beta?!",
+      detail: "This version of the puzzle is under development. This program also uses highly experimental builds of Electron. You will encounter issues.",
+      type: "error",
+      message: "This version is in Beta!"
    });
 }
 
-/* function DebugWindow() {
+function ElectronDebugWindow() {
    const window = BrowserWindow.getFocusedWindow();
+   const {electronVersion} = require('electron-util');
+   const {chromeVersion} = require('electron-util');
    dialog.showMessageBox(window, {
       title: "Debug Info",
       type: "info",
-      message: "Version Internal Build 2\nMore stuff:\n" + debugInfo(),
+      message: "Version " + ProgramVersionName + " (" + ProgramVersionNumber + ") - " + ProgramBranch + "\nElectron: " + electronVersion + "\nChrome: " + chromeVersion,
    });
-} */
+}
 
-function DebugWindow() {
-   const debugWin = new BrowserWindow({ width: 350, height: 350, maximizable: false, minimizable: false, movable: false, resizable: false, alwaysOnTop: true, skipTaskbar: false})
-   debugWin.loadFile("./about.html")
-   debugWin.removeMenu();
+function AboutWindow() {
+   const aboutWin = new BrowserWindow({ width: 350, height: 350, maximizable: false, minimizable: false, movable: false, resizable: false, alwaysOnTop: true, skipTaskbar: false})
+   aboutWin.loadFile("./about.html")
+   aboutWin.removeMenu();
 }
 
 app.on('ready', () => {
    const win = new BrowserWindow ({
      width: 1280,
-     height: 720
+     height: 720,
    })
-   win.loadFile('./before.html')
+   loading.on('finished', () => {
+   win.loadURL('http://electron-project-cutie.baka.host/');
+})
 
   function goForward() {
     if(win.webContents.canGoForward())
@@ -44,7 +53,7 @@ app.on('ready', () => {
       win.webContents.goBack();
   }
 
-  const template = [
+const template = [
    {
       label: 'Tools',
       submenu: [
@@ -69,6 +78,9 @@ app.on('ready', () => {
             role: 'reload'
          },
          {
+            role: 'forcereload'
+         },
+         {
             role: 'toggledevtools'
          },
          {
@@ -86,7 +98,14 @@ app.on('ready', () => {
             label: 'Program Info',
             accelerator: 'ctrl+a',
             click: async () => {
-               DebugWindow();
+               AboutWindow();
+            }
+         },
+         {
+            label: 'Electron',
+            accelerator: 'ctrl+shift+a',
+            click: async () => {
+               ElectronDebugWindow();
             }
          }
       ],
@@ -98,10 +117,20 @@ Menu.setApplicationMenu(menu)
 
 app.whenReady().then(() => {
    setTimeout(() => { betaWarning(); }, 1000);
+   setTimeout(() => loading.emit('finished'), 5000);
 })
+}) // this here in the end of the app.on, DONT REMOVE PLEASE.
 
-win.webContents.on("did-fail-load", function() {
-   console.error("did-fail-load");
-   win.loadFile("./A/404a.html"); // Redirect to the real 404 page, not the fake one.
-});
+
+// DiscordRPC
+
+const client = require("discord-rich-presence")('909662852850257941');
+
+client.updatePresence({
+   details: ProgramVersionName + " - " + ProgramBranch,
+   state: 'Completing Puzzles...',
+   startTimestamp: Date.now(),
+   largeImageKey: "logo",
+   largeImageTooltip: "Electron 16",
+   instance: true
 })

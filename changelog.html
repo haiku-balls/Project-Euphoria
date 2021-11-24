@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html style="font-family: SegoeUI;">
+    <!-- script src="./renderer.js"></script> React functionality or something.-->
     <script language=JavaScript>
-        
         var message = "You don't have right click privileges. Go steal NFTs instead.";
         
         function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
@@ -9,18 +9,25 @@
         if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
         
         document.onmousedown = rtclickcheck;
-        
-        </script>
+    </script>
     <head>
         <meta charset="UTF-8">
         <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
         <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self'; font-src 'self'; script-src 'self'">
-        <link rel="stylesheet" href="../index.css">
-        <title>Project Cutie - External Ring Ring Ring Ring Ring Ring Ring Ring External Human Experiment V2001-2/2-b</title>
+        <link rel="stylesheet" href="./index.css">
+        <title>Project Cutie - Changelog</title>
     </head>
     <body style="background-color: black; color:white;">
-    <p style="color: #161717">Ever try pressing F12 and using the console? :)</p>
-    <script src="../scripts/s.js"></script>
+    <a class="back-button" href="./index.html">Back</a>
+    <h1 style="font-style: italic;">Changelog</h1>
+    <h3>Internal Dev Build 3</h3>
+    <p>
+        <b>- New! Electron to the web!</b> <br />
+        - New! Much better 404 handling. Now handled by my server :)<br />
+        - New! Main Menu for easier navigation.<br />
+        - New! Tutorial for new players, also a skip option for returning players.<br />
+        - New! Discord Rich Presence! <br />
+    </p>
     </body>
 </html>
