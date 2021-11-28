@@ -4,7 +4,7 @@
   "description": "A puzzle game, now in electron!",
   "main": "index.js",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "electron .",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
@@ -16,7 +16,7 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.61",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
     "@electron-forge/maker-zip": "^6.0.0-beta.61",
-    "electron-nightly": "^18.0.0-nightly.20211119",
+    "electron-nightly": "^18.0.0-nightly.20211126",
     "electron-util": "^0.17.2"
   },
   "dependencies": {
