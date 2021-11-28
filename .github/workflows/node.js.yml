@@ -26,4 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: npm install electron-nightly@latest
+    - run: npm install electron-until@latest
     - run: electron .
