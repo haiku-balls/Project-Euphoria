@@ -3,3 +3,4 @@ out
 package.json
 .vscode
 dev
+dist
