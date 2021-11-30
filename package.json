@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "ajv": "^8.8.2",
+    "electron-nightly": "^v18.0.0-nightly.20211129",
     "discord-rich-presence": "0.0.8",
     "electron-squirrel-startup": "^1.0.0",
     "electron-unhandled": "^3.0.2",
