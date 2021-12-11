@@ -124,13 +124,23 @@ app.whenReady().then(() => {
 
 // DiscordRPC
 
+
 const client = require("discord-rich-presence")('909662852850257941');
 
-client.updatePresence({
-   details: ProgramVersionName + " - " + ProgramBranch,
-   state: 'Completing Puzzles...',
-   startTimestamp: Date.now(),
-   largeImageKey: "logo",
-   largeImageTooltip: "Electron 16",
-   instance: true
-})
+
+function runPresence() {
+   client.updatePresence({
+      details: ProgramVersionName + " - " + ProgramBranch,
+      state: 'Completing Puzzles...',
+      startTimestamp: Date.now(),
+      largeImageKey: "logo",
+      largeImageTooltip: "Electron 16",
+      instance: true
+   })
+}
+
+try {
+   runPresence();
+} catch (error) {
+   console.error("(Discord RPC) Failed to connect.")
+}
