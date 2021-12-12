@@ -267,7 +267,9 @@ ipcMain.on("crash", (event, args) => {
 
 // DiscordRPC
 
+
 const client = require("discord-rich-presence")('909662852850257941');
+
 client.updatePresence({
    details: ProgramVersionName + " - " + ProgramBranch,
    state: 'Completing Puzzles...',

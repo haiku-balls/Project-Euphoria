@@ -16,12 +16,14 @@
   "license": "ISC",
   "devDependencies": {
     "electron-util": "^0.17.2",
+    "json-schema": ">=0.4.0",
+    "trim-newlines": ">=3.0.1",
     "electron-builder": "^22.14.5"
   },
   "dependencies": {
     "ajv": "^8.8.2",
-    "electron-nightly": "^v18.0.0-nightly.20211129",
     "discord-rich-presence": "0.0.8",
+    "electron-nightly": "^18.0.0-nightly.20211119",
     "electron-squirrel-startup": "^1.0.0",
     "electron-unhandled": "^3.0.2",
     "electron-util": "^0.17.2"
