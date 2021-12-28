@@ -8,7 +8,8 @@ currently being supported with security updates.
 | Version | Supported          |
 | ------- | ------------------ |
 | Internal Builds (int-X.X.X)   | :x: |
-| TBD  | :white_check_mark:             |
+| Developer Builds (dev-X.X.X) | *TBD*
+| Production Builds (prod-X.X.X)  | :white_check_mark:             |
 
 ## Reporting a Vulnerability
 
