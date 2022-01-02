@@ -337,7 +337,6 @@ catch {
 
 // Discord RPC
 
-
 client.on('ready', () => {
 try {
    client.request('SET_ACTIVITY', {
