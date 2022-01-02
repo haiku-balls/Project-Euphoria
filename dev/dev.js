@@ -4,15 +4,6 @@ function makeToast() {
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2800);
 }
 
-function resetData() {
-    var x = document.getElementById("tooltip");
-    document.getElementById("tooltip").innerText = 'Resetting data...'
-    x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2800);
-    localStorage.clear();
-    setTimeout(function(){ window.location.reload(); }, 3000);
-}
-
 // TEST MODAL
 function showModal() {
     var Modal = document.getElementById('testModal');
@@ -29,8 +20,6 @@ function closeModal() {
     setTimeout(function(){ ModalContent.classList.remove('animate__animated', 'animate__zoomOut'); }, 500); // Remove animation.
 }
 
-// TEST MODAL
-
 // RESET DATA MODAL
 function showResetDataConfirmationModal() {
     var Modal = document.getElementById('resetUserDataConfirmationModal');
@@ -46,9 +35,6 @@ function closeResetDataConfirmationModal() {
     setTimeout(function(){ Modal.style.display = 'none'; }, 500);
     setTimeout(function(){ ModalContent.classList.remove('animate__animated', 'animate__zoomOut'); }, 500); // Remove animation.
 }
-
-// RESET DATA MODAL
-
 
 // ELECTRON STUFF
 

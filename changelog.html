@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html style="font-family: SegoeUI;">
-    <!-- script src="./renderer.js"></script> React functionality or something.-->
     <script language=JavaScript>
         var message = "You don't have right click privileges. Go steal NFTs instead.";
         
@@ -18,16 +17,20 @@
         <link rel="stylesheet" href="./css/index.css">
         <title>Project Cutie - Changelog</title>
     </head>
-    <body style="background-color: black; color:white;">
+    <body>
     <a class="back-button" href="./index.html">Back</a>
     <h1 style="font-style: italic;">Changelog</h1>
-    <h3>Internal Dev Build 3</h3>
+    <h3>Internal Dev Build 4.1</h3>
     <p>
-        <b>- New! Electron to the web!</b> <br />
-        - New! Much better 404 handling. Now handled by my server :)<br />
-        - New! Main Menu for easier navigation.<br />
-        - New! Tutorial for new players, also a skip option for returning players.<br />
-        - New! Discord Rich Presence! <br />
+        <h4>New</h4>
+        - Electron supercharged. Making use of the IPC. <br />
+        - Tray Icon, will make for some interesting puzzles. :)<br />
+        - <i>Improvement!</i> Faster startup and loading times. <br />
+        <h4>Known Issues & Fixes</h4>
+        - (Fixed) INT_ERROR wouldn't crash the client. <br />
+        - (Fixed) Node had some security problems. <br />
+        - (Dev Build 4; Fixed) The versions within the program would report 'undefined.' <br />
+        - (Dev Build 4; Fixed) The tray icon was invisible. (Currently uses electron logo)
     </p>
     </body>
 </html>

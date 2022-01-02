@@ -5,20 +5,8 @@
     width: 50%;
 }
 
-@font-face { /* Normal Text */
-    font-family: SegoeUI;
-    src: url(http://electron-project-cutie.baka.host/etc/SEGOEUI.TTF);
-    font-weight: normal;
-}
-
-@font-face { /* Normal Bold Text */
-    font-family: SegoeUIBold;
-    src: url(http://electron-project-cutie.baka.host/etc/SEGOEUIB.TTF);
-    font-weight: bold;
-}
-
-@font-face { /* Normal Italic Text */
-    font-family: SegoeUIItalic;
-    src: url(http://electron-project-cutie.baka.host/etc/SEGOEUII.TTF);
-    font-style: italic;
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

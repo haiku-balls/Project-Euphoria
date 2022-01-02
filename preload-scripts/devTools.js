@@ -1,9 +1,7 @@
-// All of the Node.js APIs are available in the preload process.
-// It has the same sandbox as a Chrome extension.
-// This script is used by the developer tools.
-// DiscordRPC
-
-
+const {
+  contextBridge,
+  ipcRenderer
+} = require("electron");
 
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
@@ -24,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('host-memory').innerHTML = memoryMB + ' MB (' + memoryGB + ' GB)'
 
     const electron_crash_button = document.getElementById('electron-crash');
-    const electron_hang_button = document.getElementById('electron-hang')
+    const electron_hang_button = document.getElementById('electron-hang');
 
     electron_crash_button.addEventListener('click', ()=>{
       console.log('With pleasure.')
@@ -36,4 +34,24 @@ window.addEventListener('DOMContentLoaded', () => {
       process.hang();
     })
     // DiscordRPC
+    contextBridge.exposeInMainWorld(
+      "api", {
+          send: (channel, data) => {
+              // whitelist channels
+              let validChannels = ["resetData"];
+              if (channel === 'resetData') {
+                 ipcRenderer.send(channel, data);
+              }
+          },
+      }
+    );
+
+    function resetData() {
+      var x = document.getElementById("tooltip");
+      document.getElementById("tooltip").innerText = 'Resetting data...'
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2800);
+      setTimeout(function(){ window.close(); }, 3000);
+  }
+  document.getElementById("reset-data").addEventListener("click", resetData); 
 })

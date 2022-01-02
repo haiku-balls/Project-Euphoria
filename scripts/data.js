@@ -23,3 +23,11 @@ if (localStorage.getItem('chp') && localStorage.getItem('totalAchieve')) { // Ch
     // Total
     localStorage.setItem('totalAchieve', 0) // 0 is always default.
 }
+
+
+function getData() {
+    var chapterValue = localStorage.getItem('chp');
+    var totalAchieve = localStorage.getItem('totalAchieve');
+    document.getElementById('playerChapter').innerText = 'Chapter: ' + chapterValue;
+    document.getElementById('playerTotalAchieve').innerText = 'Total Achievements: ' + totalAchieve;
+}

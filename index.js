@@ -5,26 +5,44 @@ const path = require('path');
 // Program variables, makes changing strings less tedious :>
 var ProgramVersionName = "Build 4";
 var ProgramVersionNumber = process.env.npm_package_version;
-var ProgramBranch = "Internal Branch"
+var ProgramBranch = "Internal "
+
+// Discord RPC consts
+const rpc = require("discord-rpc");
+const client = new rpc.Client({ transport: 'ipc' });
+const config = require('./config.json');
+const Renderer = require('electron/renderer');
+var RPCVersion = 'Internal Build 4 int-'
 
 function betaWarning() {
    const window = BrowserWindow.getFocusedWindow();
    dialog.showMessageBoxSync(window, {
-      title: "Beta?!",
-      detail: "This version of the puzzle is under development. This program also uses highly experimental builds of Electron. You will encounter issues.",
-      type: "error",
-      message: "This version is in Beta!"
+      title: "Project Cutie - Internal Build",
+      message: "Woah! This is experimental!",
+      detail: "You're running an internal build of the Project Cutie Program. This version uses experimental electron builds, and the program itself may have issues. Please report them if you encounter any, thanks.",
+      type: "error"
+   });
+}
+
+// For crashes.
+function crashExitNotice() {
+   const window = BrowserWindow.getFocusedWindow();
+   dialog.showMessageBoxSync(window, {
+      title: "Project Cutie - Crash",
+      message: "Uh oh, Electron has crashed.",
+      detail: "This may or may not have been intentional. The program will now be terminated.",
+      type: "error"
    });
 }
 
 function ElectronDebugWindow() {
    const window = BrowserWindow.getFocusedWindow();
-   const {electronVersion} = require('electron-util');
+   const {electronVersion } = require('electron-util');
    const {chromeVersion} = require('electron-util');
    dialog.showMessageBox(window, {
       title: "Debug Info",
       type: "info",
-      message: "Version " + ProgramVersionName + " (" + ProgramVersionNumber + ") - " + ProgramBranch + "\nElectron: " + electronVersion + "\nChrome: " + chromeVersion,
+      message: "Version: " + ProgramBranch + ProgramVersionName + " (" + ProgramVersionNumber + ")" + "\nElectron: " + electronVersion + "\nChrome: " + chromeVersion,
    });
 }
 
@@ -33,9 +51,7 @@ function AboutWindow() {
       width: 350, 
       height: 350, 
       maximizable: false, 
-      minimizable: false, 
-      movable: false, 
-      resizable: false, 
+      minimizable: false,
       alwaysOnTop: true, 
       skipTaskbar: false,
       webPreferences: {
@@ -57,6 +73,7 @@ function INTERRORWindow() {
       resizable: false, 
       alwaysOnTop: true, 
       skipTaskbar: false,
+      closable: false,
       title: 'Project Cutie - INT_ERROR',
       webPreferences: {
          devTools: true,
@@ -91,7 +108,7 @@ app.on('ready', () => {
    betaWarning();
 
    // System Tray
-   const icon = nativeImage.createFromPath('./etc/trayIcon.png')
+   const icon = nativeImage.createFromPath(path.join(__dirname, './etc/trayIcon.png'))
    tray = new Tray(icon)
    const contextMenu = Menu.buildFromTemplate([
       {
@@ -104,7 +121,7 @@ app.on('ready', () => {
          type: 'separator'
       },
       {
-         label: 'Dev Tools', 
+         label: 'Debug Tools', 
          type: 'normal',
          click: async () => {
             debugWindow();
@@ -132,7 +149,6 @@ app.on('ready', () => {
      }
    })
    win.loadURL('http://electron-project-cutie.baka.host/');
-   win.webContents.session.clearCache();
    win.webContents.setFrameRate(60);
    win.webContents.setBackgroundThrottling(true);
    win.once('ready-to-show', () => {
@@ -155,11 +171,38 @@ app.on('ready', () => {
       intRAN = true;
       win.webContents.goBack();
       INTERRORWindow();
+      client.request('SET_ACTIVITY', {
+            pid: process.pid,
+            activity: {
+            timestamps: {
+               start: config.TimeStart == "" ? new Date().getTime(): Number(config.TimeStart),
+            },
+            details: 'Build Internal? Internal Build Internal Build Internal Build Internal Build Internal Build Internal Build',
+            state: 'Completing?????????????@??<$nil;:>',
+            assets: {
+               large_image: config.LargeImage,
+               large_text: config.LargeImageText
+            },
+            buttons : [
+               {
+                  label : config.Button1,url : config.Url1
+               }
+            ]
+         }
+      })
      }
      else {
-        return
+        return;
      }
   });
+
+   ipcMain.on('resetData', (event, args) => {
+      function resetData() {
+         win.webContents.session.clearStorageData();
+         win.reload();
+      }
+      setTimeout(() => { resetData(); }, 3000) // Waits for the tooltip, and the window to close.
+   })
 
 const mainWindowMenu = [
    {
@@ -190,12 +233,6 @@ const mainWindowMenu = [
          },
          {
             role: 'toggledevtools'
-         },
-         {
-            type: 'separator'
-         },
-         {
-            role: 'togglefullscreen'
          }
       ],
    },
@@ -262,15 +299,68 @@ app.on('window-all-closed', () => {
 // Renderer Events
 ipcMain.on("crash", (event, args) => {
    console.log('Night night.')
+   crashExitNotice();
    process.crash();
 });
 
-// DiscordRPC
+// Renderer Events
+ipcMain.handle("getProgramVersion", async (event, appProgramVersion) => {
+   const result = await app.getVersion();
+   return result
+});
 
-const client = require("discord-rich-presence")('909662852850257941');
-client.updatePresence({
-   details: ProgramVersionName + " - " + ProgramBranch,
-   state: 'Completing Puzzles...',
-   startTimestamp: Date.now(),
-   largeImageKey: "logo",
+app.on('child-process-gone', () => {
+   crashExitNotice();
+})
+
+app.on('renderer-process-crashed', () => {
+   crashExitNotice();
+})
+
+process.on('unhandledRejection', () => {
+   console.log('An unhandled rejection was thrown.')
+})
+
+process.on('uncaughtException', (error) => {
+   console.log('An uncaught exception was thrown.')
+   console.log(error)
+})
+
+// Discord RPC
+
+try {
+   client.login({ clientId : config.ClientID })
+}
+catch {
+   console.error('(RPC) Failed to initialize.')
+}
+
+// Discord RPC
+
+
+client.on('ready', () => {
+try {
+   client.request('SET_ACTIVITY', {
+      pid: process.pid,
+      activity: {
+      timestamps: {
+         start: config.TimeStart == "" ? new Date().getTime(): Number(config.TimeStart)
+      },
+      details: RPCVersion + ProgramVersionNumber,
+      state: config.State,
+      assets: {
+         large_image: config.LargeImage,
+         large_text: config.LargeImageText
+      },
+      buttons : [
+         {
+            label : config.Button1,url : config.Url1
+         }
+      ]
+      }
+   })
+} 
+catch {
+   console.error('(RPC) Failed to set the activity.')
+}
 })
