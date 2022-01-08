@@ -4,7 +4,7 @@ const path = require('path');
 
 // Program variables, makes changing strings less tedious :>
 var ProgramVersionName = "Build 4";
-var ProgramVersionNumber = process.env.npm_package_version;
+var ProgramVersionNumber = app.getVersion();
 var ProgramBranch = "Internal "
 
 // Discord RPC consts
@@ -30,7 +30,7 @@ function crashExitNotice() {
    dialog.showMessageBoxSync(window, {
       title: "Project Cutie - Crash",
       message: "Uh oh, Electron has crashed.",
-      detail: "This may or may not have been intentional. The program will now be terminated.",
+      detail: "This may or may not have been intentional. The program will now be terminated. I'm sorry :(",
       type: "error"
    });
 }
@@ -52,6 +52,7 @@ function AboutWindow() {
       height: 350, 
       maximizable: false, 
       minimizable: false,
+      resizable: false,
       alwaysOnTop: true, 
       skipTaskbar: false,
       webPreferences: {
