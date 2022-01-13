@@ -7,7 +7,7 @@ contextBridge.exposeInMainWorld(
     "api", {
         send: (channel, data) => {
             // whitelist channels
-            let validChannels = ["crash", "INT_ERROR", "getProgramVersion"];
+            let validChannels = ["crash", "INT_ERROR", "getProgramVersion", "throw"];
             if (channel === 'getProgramVersion') {
                var appProgramVersion
                ipcRenderer.invoke('getProgramVersion', appProgramVersion).then((result) => {

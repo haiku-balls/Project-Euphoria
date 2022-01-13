@@ -1,17 +1,5 @@
-@font-face { /* Normal Text */
-    font-family: SegoeUI;
-    src: url(../etc/SEGOEUI.TTF);
-    font-weight: normal;
-}
-
-@font-face { /* Normal Bold Text */
-    font-family: SegoeUIBold;
-    src: url(../etc/SEGOEUIB.TTF);
-    font-weight: bold;
-}
-
-@font-face { /* Normal Italic Text */
-    font-family: SegoeUIItalic;
-    src: url(../etc/SEGOEUII.TTF);
-    font-style: italic;
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

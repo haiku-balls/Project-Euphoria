@@ -7,9 +7,10 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
+    "chrome": "electron chrome.js",
+    "update": "npm install electron-nightly@latest && npm update && npx npm-check-updates -u",
     "postinstall": "electron-builder install-app-deps",
-    "build": "electron-builder --windows",
-    "release": "electron-builder --windows --publish always"
+    "build": "electron-builder --windows"
   },
   "devDependencies": {
     "electron-builder": "^22.14.5"
@@ -18,9 +19,10 @@
     "ajv": "^8.8.2",
     "discord-rpc": "^4.0.1",
     "electron-is": "^3.0.0",
-    "electron-nightly": "^18.0.0-nightly.20220107",
+    "electron-nightly": "^18.0.0-nightly.20220112",
     "electron-store": "^8.0.1",
     "electron-unhandled": "^3.0.2",
-    "electron-util": "^0.17.2"
+    "electron-util": "^0.17.2",
+    "sweetalert": "^2.1.2"
   }
 }

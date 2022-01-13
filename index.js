@@ -30,7 +30,7 @@ function crashExitNotice() {
    dialog.showMessageBoxSync(window, {
       title: "Project Cutie - Crash",
       message: "Uh oh, Electron has crashed.",
-      detail: "This may or may not have been intentional. The program will now be terminated. I'm sorry :(",
+      detail: "This may or may not have been intentional. The program will be terminated. I'm sorry :(",
       type: "error"
    });
 }
@@ -304,11 +304,30 @@ ipcMain.on("crash", (event, args) => {
    process.crash();
 });
 
-// Renderer Events
+ipcMain.on("throw" , (event, args) => {
+   throw "[18364:0108/223912.226:ERROR:CONSOLE(1)] 'TypeError: Cannot read properties of undefined (reading 'RPC_GATE_FAILED') TypeError: Cannot read properties of undefined (reading 'RPC_GATE_FAILED')"
+   const window = BrowserWindow.getFocusedWindow();
+   dialog.showMessageBoxSync(window, {
+      type: 'error',
+      title: "Project Cutie - Uncaught Exception",
+      message: "An unhandled expection was thrown in the main process.",
+      detail: "'TypeError: Cannot read properties of undefined (reading 'RPC_GATE_FAILED') at: index.js:-1'"
+   })
+   dialog.showMessageBoxSync(window, {
+      type: 'error',
+      title: "Project Cutie - Uncaught Exception",
+      message: "An unknown error occurred.",
+      detail: "ERROR:gpu_init.cc(454) Passthrough is not supported. The program will be terminated."
+   })
+   app.quit();
+});
+
 ipcMain.handle("getProgramVersion", async (event, appProgramVersion) => {
    const result = await app.getVersion();
    return result
 });
+
+// Crash, error events.
 
 app.on('child-process-gone', () => {
    crashExitNotice();
@@ -320,6 +339,7 @@ app.on('renderer-process-crashed', () => {
 
 process.on('unhandledRejection', () => {
    console.log('An unhandled rejection was thrown.')
+   console.log(error)
 })
 
 process.on('uncaughtException', (error) => {
