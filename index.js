@@ -2,6 +2,10 @@ const { app, BrowserWindow, Menu, dialog, nativeImage, Tray, ipcMain } = require
 let tray = null
 const path = require('path');
 
+// Updater code
+// const updater = require('src/index');
+// updater.init('https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/updates.json');
+
 // Program variables, makes changing strings less tedious :>
 var ProgramVersionName = "Build 4";
 var ProgramVersionNumber = app.getVersion();
@@ -11,7 +15,6 @@ var ProgramBranch = "Internal "
 const rpc = require("discord-rpc");
 const client = new rpc.Client({ transport: 'ipc' });
 const config = require('./config.json');
-const Renderer = require('electron/renderer');
 var RPCVersion = 'Internal Build 4 int-'
 
 function betaWarning() {
