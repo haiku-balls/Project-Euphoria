@@ -10,6 +10,7 @@ const path = require('path');
 var ProgramVersionName = "Build 4";
 var ProgramVersionNumber = app.getVersion();
 var ProgramBranch = "Internal "
+var BuildDate = '1/24/22'
 
 // Discord RPC consts
 const rpc = require("discord-rpc");
@@ -45,7 +46,7 @@ function ElectronDebugWindow() {
    dialog.showMessageBox(window, {
       title: "Debug Info",
       type: "info",
-      message: "Version: " + ProgramBranch + ProgramVersionName + " (" + ProgramVersionNumber + ")" + "\nElectron: " + electronVersion + "\nChrome: " + chromeVersion,
+      message: "Version: " + ProgramBranch + ProgramVersionName + " (" + ProgramVersionNumber + ")" + "\nBuild Date: " + BuildDate + "\nElectron: " + electronVersion + "\nChrome: " + chromeVersion,
    });
 }
 
@@ -340,7 +341,7 @@ app.on('renderer-process-crashed', () => {
    crashExitNotice();
 })
 
-process.on('unhandledRejection', () => {
+process.on('unhandledRejection', (error) => {
    console.log('An unhandled rejection was thrown.')
    console.log(error)
 })
