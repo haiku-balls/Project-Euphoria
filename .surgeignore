@@ -1,0 +1,11 @@
+node_modules/
+dev/
+index.js
+package.json
+package-lock.json
+readme.md
+security.md
+config.json
+.vs
+.vscode
+dist

@@ -85,7 +85,7 @@ function INTERRORWindow() {
          preload: path.join(__dirname, './scripts/index.js')
       }
    })
-   intErrorWin.loadURL('http://electron-project-cutie.baka.host/A/INT_ERROR.html')
+   intErrorWin.loadURL('https://project-cutie-electron.surge.sh/A/INT_ERROR.html')
    intErrorWin.removeMenu();
    intErrorWin.webContents.openDevTools();
 }
@@ -153,7 +153,7 @@ app.on('ready', () => {
         preload: path.join(__dirname, './scripts/index.js'),
      }
    })
-   win.loadURL('http://electron-project-cutie.baka.host/');
+   win.loadURL('https://project-cutie-electron.surge.sh');
    win.webContents.setFrameRate(60);
    win.webContents.setBackgroundThrottling(true);
    win.once('ready-to-show', () => {

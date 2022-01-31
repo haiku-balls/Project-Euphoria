@@ -4,7 +4,7 @@
 
 // Listen, this is horrendous code... but at least it works LMFAO.
 
-var achievementGetSFX = new Audio('http://electron-project-cutie.baka.host/BGM/tada.ogg')
+var achievementGetSFX = new Audio('https://project-cutie-electron.surge.sh/BGM/tada.ogg')
 achievementGetSFX.volume = 0.5;
 function checkAchievement() {
     var achievementID = document.getElementById('achievementID').innerHTML;

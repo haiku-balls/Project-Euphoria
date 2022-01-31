@@ -5,32 +5,23 @@
   "version": "0.4.1",
   "description": "A puzzle game, now in electron!",
   "main": "index.js",
-  "build": {
-    "win": {
-      "target": "squirrel"
-    }
-  },
   "scripts": {
     "start": "electron .",
     "chrome": "electron chrome.js",
-    "update": "npx npm-check-updates -u && npm install && npm update",
     "postinstall": "electron-builder install-app-deps",
-    "build": "electron-builder --windows"
+    "build": "electron-builder --windows",
+    "upload": "surge --domain https://project-cutie-electron.surge.sh"
   },
   "devDependencies": {
-    "electron-builder": "^22.14.5",
-    "electron-builder-squirrel-windows": "^23.0.0-alpha.2",
-    "electron-simple-publisher": "^2.0.1"
+    "electron-builder": "^22.14.5"
   },
   "dependencies": {
     "ajv": "^8.9.0",
     "discord-rpc": "^4.0.1",
     "electron-is": "^3.0.0",
     "electron-nightly": "^18.0.0-nightly.20220125",
-    "electron-simple-updater": "^2.0.11",
     "electron-store": "^8.0.1",
     "electron-unhandled": "^3.0.2",
-    "electron-util": "^0.17.2",
-    "sweetalert": "^2.1.2"
+    "electron-util": "^0.17.2"
   }
 }
