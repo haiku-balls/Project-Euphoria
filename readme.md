@@ -1,2 +1,2 @@
-# Dev Branch
-Used for testing new changes to the code. Sometimes builds will be built using this branch.
+# Web Branch
+Used for pushing updates to the surge website.
