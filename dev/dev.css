@@ -1,0 +1,233 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.make-toast {
+    background-color: #2f3cf0;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+.electron-show-messageBox {
+    background-color: #2f3cf0;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.electron-bad {
+    background-color: #f02f2f;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.reset-data {
+    background-color: #f02f2f;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.back-button {
+    background-color: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+
+#tooltip {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: absolute;
+    z-index: 3;
+    right: 20px;
+    top: 20px;
+    font-size: 17px;
+}
+  
+#tooltip.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+  
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 20px; opacity: 1;}
+}
+  
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 20px; opacity: 1;}
+}
+  
+@-webkit-keyframes fadeout {
+    from {top: 20px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+  
+@keyframes fadeout {
+    from {top: 20px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+  
+  /* Modal Content */
+.modal-content {
+    color: #ffffff;
+    background-color: #272727;
+    position: absolute;
+    margin: auto;
+    padding: 20px;
+    border: 4px double rgb(241, 241, 241);
+    box-shadow: 2px 5px 5px rgb(32, 32, 32);
+    top: 50%;
+    left: 50%;
+    height: 140px;
+    width: 500px;
+    margin-top: -70px;
+    margin-left: -250px;
+    padding: 8px;
+    border-radius: 10px;
+    animation-duration: 0.5s;
+}
+
+.yes-button {
+    background-color: #2f3cf0;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 50px -1px 0px 0px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+    float: right;
+}
+
+.no-button   {
+    background-color: #f02f2f;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 50px -1px 0px 5px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+    float: right;
+}
+
+.confirmationModal-content {
+    color: #ffffff;
+    background-color: #272727;
+    position: absolute;
+    margin: auto;
+    padding: 20px;
+    border: 4px double rgb(160, 3, 3);
+    box-shadow: 2px 5px 5px rgb(32, 32, 32);
+    top: 50%;
+    left: 50%;
+    height: 140px;
+    width: 500px;
+    margin-top: -70px;
+    margin-left: -250px;
+    padding: 8px;
+    border-radius: 10px;
+    animation-duration: 0.5s;
+}
+
+.modal-title {
+    margin-block-start: 0px;
+    margin-block-end: 5px;
+}
+
+.modal-description {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
