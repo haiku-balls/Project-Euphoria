@@ -13,6 +13,6 @@ This version of the program uses Electron (subject to change) to enhance the pos
 | master (stable) | The main branch with the best code. Currently for internal builds, the master branch is not used. |
 | dev | The branch used for recent changes that may be unstable. Currently all builds use this branch. |
 | website (stable) | Branch used for pushing updates to the website. |
-| website-dev (dev) | The unstable variant of the website branch. *This is not available yet.* |
+| website-dev (dev) | The unstable variant of the website branch. |
 
 [^1]: Subject to change.
