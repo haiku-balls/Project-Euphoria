@@ -1,5 +1,7 @@
 #### Website Publish (Stable)
 [![Surge](https://github.com/bakabakabakabakabaka/Project-Cutie-Electron/actions/workflows/surge.yml/badge.svg?branch=website)](https://github.com/bakabakabakabakabaka/Project-Cutie-Electron/actions/workflows/surge.yml)
+#### Website Publish (Dev)
+[![Surge](https://github.com/bakabakabakabakabaka/Project-Cutie-Electron/actions/workflows/surge.yml/badge.svg?branch=website-dev)](https://github.com/bakabakabakabakabaka/Project-Cutie-Electron/actions/workflows/surge.yml)
 
 # About this program
 This program is based off the original Project Cutie, a simple website with puzzles for the user's to solve.  
