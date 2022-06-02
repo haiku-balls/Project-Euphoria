@@ -1,18 +1,260 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <script src="./scripts/data.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>Project Cutie - Career Page</title>
-</head>
+    <head>
+        <script src="./scripts/career.js"></script>
+        <script src="./scripts/data.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/career.css">
+        <title>Project Euphoria - Career Page</title>
+    </head>
 <body>
     <h1>Game Progression</h1>
     <p id="playerChapter">Chapter: -- </p>
-    <p id="playerTotalAchieve">Total achievements: -- </p>
+    <p id="playerTotalAchieve">Total achievements: --/-- </p>
+    <h3>Rarity Key</h3>
+    <p>
+        <span style="color: green;">Common - Easy achievements, usually given for simply playing.</span>
+        <br />
+        <span style="color: blue;">Rare - These might take some thought to get...</span>
+        <br />
+        <span style="color: purple;">Epic - Harder than before, you might need some help.</span>
+        <br />
+        <span style="color: gold;">Legendary - Given for rather great feats, these might need lots of brain power.</span>
+        <br />
+        <span class="mythical">Mythical - Truly something to boast about. Getting one of these means that you mean business.</span>
+        <br />
+        <span style="color: gray;">Hidden - These might require you to use a considerable amount of brain power...</span>
+    </p>
+    <h3>Achievements</h3>
+    <h5><i>Achievements without an ID are not implemented yet.</i></h5>
+    <!-- Achievement -->
+    <h3>Beginner</h3>
+    <div class="achievement-box">
+        <span id="achievement-id1" class="achievement-id">
+            (ID: 1)
+        </span>
+        <span class="achievement-title">
+            Getting Started •
+        </span>
+        <span class="achievement-rarity common">
+            COMMON
+        </span>
+        <br />
+        <span class="achievement-description">
+            Play the game.
+        </span>
+        <br />
+        <span id="1" class="achievement-status">
+            LOCKED!
+        </span>
+    </div>
+    <div class="achievement-box">
+        <span id="achievement-id" class="achievement-id">
+            (ID: 3)
+        </span>
+        <span class="achievement-title">
+            ♾️ A new chapter. •
+        </span>
+        <span class="achievement-rarity hidden">
+            HIDDEN
+        </span>
+        <br />
+        <span class="achievement-description">
+            ...you forgave me.
+        </span>
+        <br />
+        <span id="3" class="achievement-status">
+            LOCKED!
+        </span>
+    </div>
+    <h3>Chapter 1</h3>
+    <!-- Achievement -->
+    <div class="achievement-box">
+        <span id="achievement-id2" class="achievement-id">
+            (ID: 2)
+        </span>
+        <span class="achievement-title">
+            🤔 Wormholes? •
+        </span>
+        <span class="achievement-rarity common">
+            COMMON
+        </span>
+        <br />
+        <span class="achievement-description">
+            Traverse through a wormhole.
+        </span>
+        <br />
+        <span id="2" class="achievement-status">
+            LOCKED!
+        </span>
+    </div>
+    <h3 class="achievement-rarity mythical">
+        Challenges - <i>"Is that a challenge?!"</i>
+    </h3>
+    <div class="achievement-box">
+        <span id="achievement-idC-1" class="achievement-id">
+            (ID: C-1)
+        </span>
+        <span class="achievement-title">
+            💘🏠 I LOVE HOME! •
+        </span>
+        <span class="achievement-rarity legendary">
+            LEGENDARY
+        </span>
+        <br />
+        <span class="achievement-description">
+            Idle on the home page for 6 hours.
+        </span>
+        <br />
+        <span id="C-1" class="achievement-status">
+            LOCKED!
+        </span>
+    </div>
+    <div class="achievement-box">
+        <span class="achievement-id">
+            (ID: C-2)
+        </span>
+        <span class="achievement-title">
+            💀 Touch Grass. •
+        </span>
+        <span class="achievement-rarity mythical">
+            MYTHICAL
+        </span>
+        <br />
+        <span class="achievement-description">
+            Idle for 24 hours. Please take a goddamn break.
+        </span>
+        <br />
+        <span id="C-2" class="achievement-status">
+            LOCKED!
+        </span>
+    </div>
+    <div class="achievement-box">
+        <span  class="achievement-id">
+            (ID: C-3)
+        </span>
+        <span class="achievement-title">
+            🔌 'he disconnected.' •
+        </span>
+        <span class="achievement-rarity rare">
+            RARE
+        </span>
+        <br />
+        <span class="achievement-description">
+            Reload the homepage 500 times.
+        </span>
+        <br />
+        <span id="C-3" class="achievement-status">
+            LOCKED!
+        </span>
+    </div>
+    <!--
+    <div class="achievement-box">
+        <span class="achievement-id">
+            (ID: --)
+        </span>
+        <span class="achievement-title">
+           🔙 Run that back. •
+        </span>
+        <span class="achievement-rarity rare">
+            RARE
+        </span>
+        <br />
+        <span class="achievement-description">
+            Play the game... backwards? 
+        </span>
+        <br />
+        <span id="" class="achievement-status">
+            LOCKED!
+        </span>
+    </div>
+    <div class="achievement-box">
+        <span class="achievement-id">
+            (ID: --)
+        </span>
+        <span class="achievement-title">
+            😎 Hackerman •
+        </span>
+        <span class="achievement-rarity epic">
+            EPIC
+        </span>
+        <br />
+        <span class="achievement-description">
+            Access the developer tools without using a development version.
+        </span>
+        <br />
+        <span id="" class="achievement-status">
+            LOCKED!
+        </span>
+    </div>
+    <div class="achievement-box">
+        <span class="achievement-id">
+            (ID: --)
+        </span>
+        <span class="achievement-title">
+            ⭐ Developer Bribe •
+        </span>
+        <span class="achievement-rarity mythical">
+            MYTHICAL
+        </span>
+        <br />
+        <span class="achievement-description">
+            [placeholder].
+        </span>
+        <br />
+        <span id="" class="achievement-status">
+            LOCKED!
+        </span>
+    </div>
+    -->
+    <div class="achievement-box">
+        <span class="achievement-id">
+            (ID: --)
+        </span>
+        <span class="achievement-title">
+            ⭐ ??? •
+        </span>
+        <span style="font-weight: bold; color: rgb(43, 43, 43);">HIDDEN</span>
+        <span class="achievement-rarity mythical">
+            MYTHICAL
+        </span>
+        <br />
+        <span class="achievement-description">
+            ...
+        </span>
+        <br />
+        <span id="" class="achievement-status">
+            LOCKED!
+        </span>
+    </div>
     <script>
         getData();
     </script>
+
+    <br />
+    <br />
+    <h3>Advanced Options</h3>
+    <button class="id-button" onclick="buttonToggle();">Toggle IDs</button>
+
+    <!-- Reset data modal -->
+    <div id="resetUserDataConfirmationModal" class='modal'>
+        <div id="modal-content" class="confirmationModal-content">
+            <h3 id="modal-title" class="modal-title"><i>Are you sure?</i></h3>
+            <p id="modal-description" class="modal-description">Are you sure you want to clear all data?</p>
+            <a id="modal-no-button" class="no-button" onclick="closeResetDataConfirmationModal();return false;">No!</a>
+            <a id="modal-yes-button" class="yes-button" onclick="resetData();return false;">Yes!</a>
+        </div>
+    </div>
+
+    <!-- Logic -->
+    <div style="display: block;">
+        <script>
+            function resetDataEvent() {
+                window.api.send('resetData')
+            }
+        </script>
+        <a id="reset-data" class="reset-data" onclick="resetDataEvent()">Reset user data</a>
+    </div>
 </body>
 </html>

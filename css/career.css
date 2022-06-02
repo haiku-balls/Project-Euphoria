@@ -1,0 +1,282 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+.id-button {
+    background-color: #313131;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.id-button:hover {
+    background-color: #1b1b1b;
+}
+
+.achievement-box {
+    background-color: rgb(56, 55, 55);
+    box-shadow: 2px 2px 2px rgb(41, 41, 41);
+    border-radius: 5px;
+    width: auto;
+    height: fit-content;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    margin: 5px;
+    display: inline-block;
+}
+
+.achievement-id {
+    display: none;
+}
+
+.achievement-title {
+    font-style: italic;
+}
+
+.achievement-rarity {
+    font-weight: bold;
+}
+
+.achievement-description {
+    font-style: italic;
+    color: rgb(119, 115, 115);
+    font-size: 14px;
+}
+
+.achievement-status {
+    display: block;
+    width: auto;
+    text-align: right;
+    margin-right: -5px;
+    font-weight: bold;
+    color: red;
+}
+
+.common {
+    color: green;
+}
+
+.rare {
+    color: blue;
+}
+
+.epic {
+    color: purple;
+}
+
+.legendary {
+    color: gold;
+}
+
+.mythical {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+.hidden {
+    color: rgb(43, 43, 43);
+}
+
+
+.hidden-mythical {
+    color: rgb(43, 43, 43);
+    animation: rainbow_animation 6s ease-in-out infinite;
+}
+
+.glow {
+    -webkit-animation: rainbow_animation_shiny 6s ease-in-out infinite;
+    -moz-animation: rainbow_animation_shiny 6s ease-in-out infinite;
+    animation: rainbow_animation_shiny 6s ease-in-out infinite;
+    text-shadow: 0 0 15px #fff;
+}
+
+@keyframes rainbow_animation_shiny {
+    0% {
+        text-shadow: 0 0 15px #ff0000;
+    }
+
+    20% {
+        text-shadow: 0 0 15px #ffa500;
+    }
+
+    40% {
+        text-shadow: 0 0 15px #ffff00;
+    }
+
+    60% {
+        text-shadow: 0 0 15px #008000;
+    }
+
+    80% {
+        text-shadow: 0 0 15px #0000ff;
+    }
+
+    90% {
+        text-shadow: 0 0 15px #4b0082;
+    }
+
+    95% {
+        text-shadow: 0 0 15px #ee82ee;
+    }
+
+    100% {
+        text-shadow: 0 0 15px #ff0000;
+    }
+}
+
+.make-toast {
+    background-color: #2f3cf0;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.reset-data {
+    background-color: #f02f2f;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+  
+  /* Modal Content */
+.modal-content {
+    color: #ffffff;
+    background-color: #272727;
+    position: absolute;
+    margin: auto;
+    padding: 20px;
+    border: 4px double rgb(241, 241, 241);
+    box-shadow: 2px 5px 5px rgb(32, 32, 32);
+    top: 50%;
+    left: 50%;
+    height: 140px;
+    width: 500px;
+    margin-top: -70px;
+    margin-left: -250px;
+    padding: 8px;
+    border-radius: 10px;
+    animation-duration: 0.5s;
+}
+
+.yes-button {
+    background-color: #2f3cf0;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 50px -1px 0px 0px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+    float: right;
+}
+
+.no-button   {
+    background-color: #f02f2f;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 50px -1px 0px 5px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+    float: right;
+}
+
+.confirmationModal-content {
+    color: #ffffff;
+    background-color: #272727;
+    position: absolute;
+    margin: auto;
+    padding: 20px;
+    border: 4px double rgb(160, 3, 3);
+    box-shadow: 2px 5px 5px rgb(32, 32, 32);
+    top: 50%;
+    left: 50%;
+    height: 140px;
+    width: 500px;
+    margin-top: -70px;
+    margin-left: -250px;
+    padding: 8px;
+    border-radius: 10px;
+    animation-duration: 0.5s;
+}
+
+.modal-title {
+    margin-block-start: 0px;
+    margin-block-end: 5px;
+}
+
+.modal-description {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}

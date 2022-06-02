@@ -1,0 +1,1 @@
+setTimeout(() => {  window.location.href = './void.html' }, 6000);

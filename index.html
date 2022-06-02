@@ -1,41 +1,129 @@
 <!DOCTYPE html>
 <html>
-    <script> 
-        window.api.send('getProgramVersion'); // sends electron the funny request.
-    </script>
-    <!-- script src="./renderer.js"></script> React functionality or something.-->
-    <script language=JavaScript>
-        
-        var message = "You don't have right click privileges. Go steal NFTs instead.";
-        
-        function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
-        
-        if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
-        
-        document.onmousedown = rtclickcheck;
-    </script>
+    <div id="announcement-bar" style="background: rgb(255, 255, 0)" class="announcement-bar top">
+        <div class="container">
+            <div class="text">
+                <svg class="icon" width="18" height="16" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.0005 7.35306C26.0005 5.54618 24.2877 4.23032 22.5418 4.69595L4.04523 9.62912C2.84146 9.95017 2.00391 11.0404 2.00391 12.2862V15.7133C2.00391 16.9592 2.84146 18.0494 4.04524 18.3704L6.99976 19.1584V19.4997C6.99976 21.985 9.01447 23.9997 11.4998 23.9997C13.2896 23.9997 14.8354 22.9547 15.5604 21.4416L22.5418 23.3036C24.2877 23.7692 26.0005 22.4534 26.0005 20.6465V7.35306ZM8.50032 19.5586L14.0719 21.0446C13.5471 21.9165 12.5915 22.4997 11.4998 22.4997C9.86258 22.4997 8.5317 21.1883 8.50032 19.5586Z" fill="#212121"/>
+                </svg>
+                <span style="color: black;">
+                This is a beta build. <i>Expect features to be unfinished or broken.</i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="internal-bar" style="display: none; background: rgb(255, 255, 255)" class="announcement-bar top">
+        <div class="container">
+            <div class="text">
+                <svg class="icon" width="18" height="16" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.0005 7.35306C26.0005 5.54618 24.2877 4.23032 22.5418 4.69595L4.04523 9.62912C2.84146 9.95017 2.00391 11.0404 2.00391 12.2862V15.7133C2.00391 16.9592 2.84146 18.0494 4.04524 18.3704L6.99976 19.1584V19.4997C6.99976 21.985 9.01447 23.9997 11.4998 23.9997C13.2896 23.9997 14.8354 22.9547 15.5604 21.4416L22.5418 23.3036C24.2877 23.7692 26.0005 22.4534 26.0005 20.6465V7.35306ZM8.50032 19.5586L14.0719 21.0446C13.5471 21.9165 12.5915 22.4997 11.4998 22.4997C9.86258 22.4997 8.5317 21.1883 8.50032 19.5586Z" fill="#212121"/>
+                </svg>
+                <span style="color: black;">
+                This is an internal build. Nothing here is final. <i>also hi cami ^^</i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div style="background:rgb(0, 119, 255)" class="announcement-bar">
+        <div class="container">
+            <div class="text">
+                <svg class="info-icon" width="18" height="16" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 14C2 20.6274 7.37258 26 14 26C20.6274 26 26 20.6274 26 14C26 7.37258 20.6274 2 14 2C7.37258 2 2 7.37258 2 14ZM15.25 8C15.25 8.69036 14.6904 9.25 14 9.25C13.3096 9.25 12.75 8.69036 12.75 8C12.75 7.30964 13.3096 6.75 14 6.75C14.6904 6.75 15.25 7.30964 15.25 8ZM14 11C14.5523 11 15 11.4477 15 12L15 20C15 20.5523 14.5523 21 14 21C13.4477 21 13 20.5523 13 20L13 12C13 11.4477 13.4477 11 14 11Z" fill="#212121"/>
+                </svg>
+                <span style="color: black;">
+                    BGM & SFX are disabled. They will be re-enabled soon.
+                </span>
+            </div>
+        </div>
+    </div>
+    
     <head>
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./css/index.css">
-        <title>Project Cutie - Home</title>
-    </head>
-    <body>
+        <title>Project Euphoria - Home (Internal)</title>
+        <!-- Primary Meta Tags -->
+        <meta name="title" content="Project Euphoria - Home">
+        <meta name="description" content="A web puzzle.">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://dev-project-cutie-electron.surge.sh/">
+        <meta property="og:title" content="Project Euphoria - Home">
+        <meta property="og:description" content="A web puzzle.">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://dev-project-cutie-electron.surge.sh/">
+        <meta property="twitter:title" content="Project Euphoria - Home">
+        <meta property="twitter:description" content="A web puzzle.">
+
+        <script src="./scripts/swapBranch.js"></script>
+        <script src="./scripts/achievement.js"></script>
         <script src="./scripts/data.js"></script> <!-- Data check. -->
-        <h1 style="text-align: center; font-style: italic;">Welcome to Project Cutie!</h1>
-        <h2 style="text-align: center;">Main Menu</h2>
-        <p style="text-align: center;"><i>Make a selection.</i></p>
-        <div style="display: block; text-align: center;">
+        <script src="./scripts/reload.js"></script>
+    </head>
+    <body onload="reloaded();">
+        <div style="display: block; align-content: center; text-align: center;">
+            <u><h1 style="font-style: italic;">Project Euphoria<br /></u>
+                <div style="font-size: 20px;">
+                    A web puzzle.
+                </div>
+                <div id="reloadCounter" class="mythical" style="font-size: 15px; display: none;">
+                    Reloads: --
+                </div>
+            </h1>
+            <a class="skip-tutorial-button" id="skip-tutorial-button" href="./A/index.html">Start</a>
+            <br />
             <a class="tutorial-button" href="./tutorial/A.html">Tutorial</a>
-            <a class="skip-tutorial-button" id="skip-tutorial-button" href="./A/index.html">Skip the tutorial, start!</a>
-            <a class="changelog-button" href="./changelog.html">Changelog</a>
-            <p style="color: rgb(102, 102, 102)">
-                <span id="programVersion"></span> <br />
-                - Development Build - <br />
-                <i>Website Build 2/5/22</i>
+            <a class="career-button" onclick="window.location.href = './career.html';">Career</a>
+            <a class="credits-button" href = './credits.html'>Credits</a>
+        </div>
+        <div id="swapBranchConfirmationModal" class='modal'>
+            <div id="modal-content" class="confirmationModal-content">
+                <h3 id="modal-title" class="modal-title"><i>Are you sure?</i></h3>
+                <p id="modal-description" class="modal-description">You will swap to the stable branch of the website.</p>
+                <a id="modal-no-button" class="no-button" onclick="closeSwapBranchConfirmationModal();">No!</a>
+                <a id="modal-yes-button" class="yes-button" onclick="swapBranch();">Yes!</a>
+            </div>
+        </div>
+        <div id="legacyBuildConfirmationModal" class='modal'>
+            <div id="legacyBuildModal-content" class="confirmationModal-content">
+                <h3 id="modal-title" class="modal-title"><i>Are you sure?</i></h3>
+                <p id="modal-description" class="modal-description">You're going to navigate to the first iteration of Project Euphoria.</p>
+                <a id="modal-no-button" class="no-button" onclick="closeLegacyBuildConfirmationModal();">No!</a>
+                <a id="modal-yes-button" class="yes-button" onclick="swapLegacy();">Yes!</a>
+            </div>
+        </div>
+        <div class="dev-details">
+            <p>
+                <span style="color: white; font-style: italic;" id="programVersion">--</span>
+                <br />
+                <span id="webBuild">
+                    Website Build 6/2/22
+                </span>
+                <span id="branch" style="display: none;">
+                    (pew_; pec_)
+                </span>
+                <a class="swapBranchLink" onclick="showSwapBranchConfirmationModal();">Stable Branch</a>
+                | 
+                <a class="swapBranchLink" onclick="openLegacyBuildConfirmationModal();">Legacy Build</a>
             </p>
         </div>
-        <p id='achievementID' style="visibility: hidden;">1</p> <!-- Achievement ID -->
+        <p id='pageName' style="display: none;">index.html</p>
         <div id='tooltip'></div>
-        <script src="./scripts/achievement.js" ></script>
+        <script>
+            window.api.send('getProgramVersion'); // sends electron the funny request.
+            checkAchievement();
+            setTimeout(() => { // 6 hours. (21600000)
+                checkChallenges();
+            }, 21600000)
+            setTimeout(() => { // 24 hours. (86400000)
+                checkChallenges();
+            }, 86400000)
+        </script>
     </body> 
 </html>

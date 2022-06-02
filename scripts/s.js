@@ -1,3 +1,3 @@
-setTimeout(() => {  console.log("1B 2A 3D 3A - A3"); console.warn("I was once told, that life is meaningless."); }, 5000);
+setTimeout(() => {  console.log("54686520676f642077697468696e20796f752c2072656c656173652069742e2028363636613631373336363661363933323339333233313661373637613263376136613333333933333735333533393331333233353331366134303261333933323339333129"); console.warn("I was once told, that life is meaningless."); }, 5000);
 setTimeout(() => {  console.warn("until... you showed up."); }, 7000);
-setTimeout(() => {  console.warn("./where.html :)"); }, 9000);
+setTimeout(() => {  console.warn("where.html :)"); }, 9000);

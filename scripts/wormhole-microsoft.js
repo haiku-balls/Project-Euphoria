@@ -1,0 +1,1 @@
+setTimeout(() => {  window.location.href = './c-microsoft.html' }, 6000);

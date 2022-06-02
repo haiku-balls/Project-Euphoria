@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void.</title>
+    <script src="../scripts/void.js"></script>
+    <link rel="stylesheet" href="../css/default.css">
+</head>
+<body>
+    <audio id="audio" autoplay loop>
+      <source src="https://media-project-euphoria.surge.sh/lost-library.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio2" loop muted>
+        <source src="https://media-project-euphoria.surge.sh/white-pillars.mp3" type="audio/mpeg">
+      </audio>
+    <div style="display: block; align-content: center; text-align: center;">
+      <h1 id="counter" style="display: none; color: red;">120</h1>
+      <div id="subCounter" style="display: none;">
+        <p style="color: #161717">Start again, bring new life into new codes. Make it readable. <br />
+        </p>
+      </div>
+    </div>
+    <script>
+      function startTimer(duration, display) {
+        var timer = duration, minutes, seconds;
+        function timerUpdate() {
+            seconds = parseInt(timer % 121, 10);
+    
+            seconds = seconds < 10 ? "" + seconds : seconds;
+    
+            display.textContent = seconds;
+            if (--timer == 0) {
+                window.location.href = "./unhandled.html";
+                clearInterval(updateTime);
+            }
+        }
+        const updateTime = setInterval(function() {
+            timerUpdate();
+        }, 1000)
+    }
+    
+    window.onload = function () {
+      var fiveMinutes = 120,
+      display = document.querySelector('#counter');
+      startTimer(fiveMinutes, display);
+    };
+    </script>
+</body>
+</html>

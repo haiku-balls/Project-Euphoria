@@ -1,0 +1,168 @@
+body {
+    background: linear-gradient( to left top, #d21cf7, #83058f);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: white;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+.common {
+    color: green;
+}
+
+.rare {
+    color: blue;
+}
+
+.epic {
+    color: rgb(185, 4, 185);
+}
+
+.legendary {
+    color: gold;
+}
+
+.mythical {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+.achievement-box {
+    background-color: rgb(90, 60, 92);
+    box-shadow: 2px 2px 2px rgb(41, 41, 41);
+    border: 2px solid white;
+    border-radius: 5px;
+    width: auto;
+    height: fit-content;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    margin: 5px;
+    display: inline-block;
+}
+
+.achievement-title {
+    font-style: italic;
+}
+
+.achievement-rarity {
+    font-weight: bold;
+}
+
+.achievement-description {
+    font-style: italic;
+    color: rgb(119, 115, 115);
+    font-size: 14px;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid pink; /* If you want dots under the hoverable text */
+}
+  
+/* Tooltip text */
+.founder-tooltip .tooltiptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -153px;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip text */
+.supporter-tooltip .tooltiptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -153px;
+    
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip text */
+.qa-tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -50px;
+    
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+  
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+} 
